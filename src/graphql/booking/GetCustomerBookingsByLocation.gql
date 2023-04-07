@@ -1,0 +1,35 @@
+query GetCustomerBookingsByLocation($locationId: uuid!) {
+    customer_bookings(where: { location_id: { _eq: $locationId } }) {
+        id
+        date
+        field
+        created_by
+        duration
+        frequency
+        time_from
+        time_to
+        price
+        payment_method
+        title
+        comment
+        is_public
+        location_id
+        customer_id
+        deleted_dates: deleted_dates {
+            id
+            date
+            event_id
+        }
+        ignored_dates: ignored_dates {
+            id
+            date
+            event_id
+        }
+        customer: customer {
+            id
+            first_name
+            last_name
+            email
+        }
+    }
+}

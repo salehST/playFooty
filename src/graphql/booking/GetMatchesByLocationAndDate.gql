@@ -1,0 +1,88 @@
+query GetMatchesByLocationAndDate($id: uuid!, $date: date!) {
+	matchesByLocationAndDate: matches(where: { location: { _eq: $id }, _and: {date: {_gte: $date}} }) {
+		id
+		home_team
+		home_score
+		half_length
+		finals_group
+		finals_knockout
+		date
+		away_team
+		away_score
+		is_friendly
+		is_bye
+		kick_off_time
+		league
+		location
+		man_of_the_match
+		name
+		number_of_halves
+		pitch
+		placeholder_away_team
+		placeholder_home_team
+		player_type
+		postponed
+		published
+		referee
+		round
+		slot_time
+		team_size
+		deleted_at
+		pitchObj: pitchByPitch {
+			id
+			name
+			pitch_name
+		}
+		leagueObj: leagueByLeague {
+			id
+			display_name
+		}
+		locationObj: locationByLocation {
+			id
+			name
+			city {
+				id
+				name
+				country {
+					id
+					name
+				}
+			}
+		}
+		homeTeamObj: teamByHomeTeam {
+			id
+			name
+		}
+		phHomeTeamObj: placeholderTeamByPlaceholderHomeTeam {
+			id
+			name
+			type
+		}
+		phAwayTeamObj: placeholder_team {
+			id
+			name
+			type
+		}
+		awayTeamObj: team {
+			id
+			name
+		}
+		refereeObj: refereeByReferee {
+			id
+			first_name
+			last_name
+		}
+		finalsGroupObj: finalsGroupByFinalsGroup {
+			final {
+				display_name
+				id
+			}
+		}
+		finalsKnockoutObj: finalsKnockoutByFinalsKnockout {
+			final {
+				id
+				display_name
+			}
+		}
+	}
+}

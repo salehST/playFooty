@@ -1,0 +1,7 @@
+mutation insert_multiple_player_booking_cancelled($date: String!, $display_date: String!, $location_id: uuid!, $pitchId: String!, $player_booking_id: Int!, $pitch_id: uuid!, $pitch_type: String!, $price: String!, $split: String!, $time_from: String!, $time_to: String!) {
+  insert_player_booking_cancelled(objects: {date: $date, display_date: $display_date, location_id: $location_id, pitchId: $pitchId, pitch_id: $pitch_id, pitch_type: $pitch_type, player_booking_id: $player_booking_id, price: $price, split: $split, time_from: $time_from, time_to: $time_to}){
+    returning {
+			id
+		}
+  }
+}

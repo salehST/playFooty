@@ -1,0 +1,56 @@
+query GetLocationsByCountry($locationId: uuid) {
+    locations(
+        where: { city: { country: { id: { _eq: $locationId } } } }
+        order_by: { city: { name: asc } }
+    ) {
+        id
+        name
+        address
+        email
+        phone_number
+        latitude
+        longitude
+        city_id
+        currency
+        logo_url
+        pwa_publish
+        incremental_time
+        minimum_duration
+        cancellation_notice_period
+        cityObj: city {
+            id
+            name
+            countryObj: country {
+                id
+                name
+            }
+        }
+        pitches {
+            id
+            name
+            type
+            location_id
+            monFrom
+            monPrice
+            monTo
+            tueFrom
+            tuePrice
+            tueTo
+            wedFrom
+            wedPrice
+            wedTo
+            thursTo
+            thursPrice
+            thursFrom
+            friFrom
+            friPrice
+            friTo
+            satFrom
+            satPrice
+            satTo
+            sunFrom
+            sunPrice
+            sunTo
+        }
+    }
+}

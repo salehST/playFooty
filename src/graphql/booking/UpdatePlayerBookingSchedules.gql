@@ -1,0 +1,7 @@
+mutation update_multiple_player_booking_schedules($ids: Int!,$date: String!, $display_date: String!, $location_id: uuid!, $pitchId: String!, $pitch_id: uuid!, $pitch_type: String!, $split: String!, $time_from: String!, $time_to: String, $price: String!) {
+  update_player_booking_schedules(where: {id: {_eq: $ids}}, _set: {id: $ids, date: $date, display_date: $display_date, location_id: $location_id, pitchId: $pitchId, pitch_id: $pitch_id, pitch_type: $pitch_type, price: $price, split: $split, time_from: $time_from, time_to: $time_to,}){
+    returning {
+			id
+		}
+  }
+}

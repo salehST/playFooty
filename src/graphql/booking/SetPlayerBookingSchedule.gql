@@ -1,0 +1,7 @@
+mutation insert_multiple_player_booking_schedules($objects: [player_booking_schedules_insert_input!]!) {
+	insert_player_booking_schedules(objects:  $objects) {
+		returning {
+			id
+		}
+	}
+}

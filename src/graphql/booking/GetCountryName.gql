@@ -1,0 +1,6 @@
+query get_country_name($uid: uuid!) {
+  countries(where: {id: {_eq: $uid}}) {
+    id
+    name
+  }
+}

@@ -1,0 +1,7 @@
+mutation delete_multiple_player_booking_schedules($id: Int!) {
+  delete_player_booking_schedules(where: {id: {_eq: $id}}){
+    returning {
+		id
+	}
+  }
+}

@@ -1,0 +1,21 @@
+query GetPlayerBookingScheduleOnLocation($location_id: uuid!) {
+  player_booking_schedules(where: {location_id: {_eq: $location_id}}) {
+    date
+    display_date
+    id
+    location_id
+    pitchId
+    pitch_id
+    pitch_type
+    player_booking_id
+    price
+    split
+    time_from
+    time_to
+    player_booking {
+      player_id
+      date
+      time
+    }
+  }
+}

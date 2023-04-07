@@ -1,0 +1,68 @@
+query GetLocationById($id: uuid!) {
+	location: locations_by_pk(id: $id) {
+		id
+		name
+		address
+		city {
+			id
+			name
+			country {
+				id
+				name
+			}
+		}
+		phone_number
+		minimum_duration
+		pwa_publish
+		incremental_time
+		cancellation_notice_period
+		currency
+		pdf_url
+		email
+		field_size
+		vat
+		logo_url
+		image_url
+		longitude
+		latitude
+		about
+		extra_info
+		pitches {
+			id
+			name
+			pitch_name
+			type
+			location_id
+			sunFrom
+			sunTo
+			monFrom
+			monTo
+			tueFrom
+			tueTo
+			wedFrom
+			wedTo
+			thursFrom
+			thursTo
+			friFrom
+			friTo
+			satFrom
+			satTo
+			sunPrice
+			monPrice
+			tuePrice
+			wedPrice
+			thursPrice
+			friPrice
+			satPrice
+			field_size
+		}
+		amenities {
+			id
+			name
+		}
+		benefits {
+			id
+			name
+		}
+	}
+}

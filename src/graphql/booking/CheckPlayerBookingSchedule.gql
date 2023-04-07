@@ -1,0 +1,5 @@
+query CheckPlayerBookingSchedule($date: String!, $location_id: uuid!, $pitchId: String!, $pitch_id: uuid!, $pitch_type: String!, $split: String!, $time_from: String!, $time_to:String!) {
+  player_booking_schedules(where: {date: {_eq: $date}, location_id: {_eq: $location_id}, pitchId: {_eq: $pitchId}, pitch_id: {_eq: $pitch_id}, pitch_type: {_eq: $pitch_type}, split: {_eq: $split}, time_from: {_eq: $time_from}, time_to: {_eq: $time_to}}) {
+    id
+  }
+}
